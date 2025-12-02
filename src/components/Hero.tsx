@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Lightbulb, Globe, Rocket, Play } from "lucide-react";
 import twcLogo from "@/assets/twc-logo.png";
@@ -88,9 +89,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="xl">
-              Register Your Team
-            </Button>
+            <Link to="/register">
+              <Button variant="hero" size="xl">
+                Register Your Team
+              </Button>
+            </Link>
             <Button variant="outline" size="xl" className="gap-2">
               <Play className="w-5 h-5" />
               Watch Video
