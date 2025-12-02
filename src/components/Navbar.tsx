@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import twcLogo from "@/assets/twc-logo.png";
@@ -46,9 +47,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="hero" size="lg">
-              Register Now
-            </Button>
+            <Link to="/register">
+              <Button variant="hero" size="lg">
+                Register Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,9 +78,11 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="mt-4">
-                Register Now
-              </Button>
+              <Link to="/register">
+                <Button variant="hero" size="lg" className="mt-4 w-full">
+                  Register Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}
