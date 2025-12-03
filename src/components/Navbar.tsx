@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import twcLogo from "@/assets/twc-logo.png";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Stages", href: "#stages" },
-  { name: "Prizes", href: "#prizes" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/", isRoute: true },
+  { name: "Journey", href: "/journey", isRoute: true },
+  { name: "News", href: "/news", isRoute: true },
+  { name: "About", href: "/#about", isRoute: false },
+  { name: "Prizes", href: "/#prizes", isRoute: false },
+  { name: "FAQ", href: "/#faq", isRoute: false },
 ];
 
 const Navbar = () => {
@@ -35,13 +35,23 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-2 text-muted-foreground font-semibold rounded-lg transition-all duration-300 hover:text-primary hover:bg-twc-orange-light"
-              >
-                {link.name}
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="px-4 py-2 text-muted-foreground font-semibold rounded-lg transition-all duration-300 hover:text-primary hover:bg-twc-orange-light"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="px-4 py-2 text-muted-foreground font-semibold rounded-lg transition-all duration-300 hover:text-primary hover:bg-twc-orange-light"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -69,14 +79,25 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t border-border animate-slide-up">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="px-4 py-3 text-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-twc-orange-light hover:text-primary"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="px-4 py-3 text-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-twc-orange-light hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="px-4 py-3 text-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-twc-orange-light hover:text-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               <Link to="/register">
                 <Button variant="hero" size="lg" className="mt-4 w-full">
