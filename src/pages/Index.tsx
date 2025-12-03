@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Stages from "@/components/Stages";
+import SubmissionRequirements from "@/components/SubmissionRequirements";
+import JudgingCriteria from "@/components/JudgingCriteria";
+import EventDay from "@/components/EventDay";
 import Prizes from "@/components/Prizes";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -12,12 +15,12 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Teens World Cup | Global Tech Competition for Young Innovators</title>
+        <title>Teens World Cup 2025 | Global Youth Tech Freestyle Innovation Challenge</title>
         <meta 
           name="description" 
-          content="Join Teens World Cup - the international tech competition empowering kids aged 6-16 to create innovative solutions for the UN Sustainable Development Goals." 
+          content="Join Teens World Cup 2025 - the freestyle global innovation challenge for ages 8-18. Create tech projects solving UN SDGs and win a fully-funded trip to USA!" 
         />
-        <meta name="keywords" content="teens, youth, competition, tech, innovation, SDG, sustainable development, coding, kids" />
+        <meta name="keywords" content="teens world cup, youth, competition, tech, innovation, SDG, sustainable development, coding, robotics, AI, freestyle" />
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -26,6 +29,9 @@ const Index = () => {
           <Hero />
           <About />
           <Stages />
+          <SubmissionRequirements />
+          <JudgingCriteria />
+          <EventDay />
           <Prizes />
           <FAQ />
           <Contact />

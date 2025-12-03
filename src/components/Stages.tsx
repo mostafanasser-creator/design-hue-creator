@@ -1,40 +1,33 @@
-import { ClipboardCheck, Users, Trophy, Medal, Award } from "lucide-react";
+import { Megaphone, ClipboardCheck, Clock, Trophy } from "lucide-react";
 
 const stages = [
   {
-    icon: ClipboardCheck,
-    title: "Registration",
-    date: "Jan 1 - Feb 28",
-    description: "Form your team and submit your project idea online",
+    icon: Megaphone,
+    title: "Official Announcement",
+    date: "February 2025",
+    description: "Competition officially announced to the public",
     color: "twc-orange",
   },
   {
-    icon: Users,
-    title: "Mentorship",
-    date: "Mar 1 - Apr 30",
-    description: "Work with expert mentors to develop your project",
+    icon: ClipboardCheck,
+    title: "Early Registration",
+    date: "February → May 2025",
+    description: "Form your team and submit your project idea early",
     color: "twc-green",
   },
   {
-    icon: Trophy,
-    title: "Semi-Finals",
-    date: "May 1 - May 15",
-    description: "Present your project to regional judges",
+    icon: Clock,
+    title: "Late Registration",
+    date: "June → July 2025",
+    description: "Last chance to register and join the competition",
     color: "twc-blue",
   },
   {
-    icon: Medal,
-    title: "Finals",
-    date: "Jun 1 - Jun 15",
-    description: "Top teams compete in the global finals",
+    icon: Trophy,
+    title: "Main Competition Event",
+    date: "September 2025",
+    description: "Present your project and compete for the grand prize",
     color: "twc-yellow",
-  },
-  {
-    icon: Award,
-    title: "Awards",
-    date: "Jun 20",
-    description: "Winners announced at the grand ceremony",
-    color: "twc-orange",
   },
 ];
 
@@ -44,13 +37,13 @@ const Stages = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-2 bg-twc-green-light text-twc-green rounded-full text-sm font-bold mb-4">
-            Competition Journey
+            Timeline 2025
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-foreground mb-6">
             Your Path to <span className="text-gradient-fun">Victory</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Follow the competition stages from registration to the grand awards ceremony
+            Follow the competition timeline from announcement to the main event
           </p>
         </div>
 

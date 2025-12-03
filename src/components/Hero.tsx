@@ -13,20 +13,21 @@ const Hero = () => {
   });
 
   useEffect(() => {
-    // Set deadline to 60 days from now for demo
-    const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 60);
+    // Set deadline to September 2025 for main event
+    const deadline = new Date("2025-09-01T00:00:00");
 
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = deadline.getTime() - now;
 
-      setCountdown({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      if (distance > 0) {
+        setCountdown({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      }
     };
 
     updateCountdown();
@@ -72,7 +73,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-twc-green-light text-twc-green rounded-full text-sm font-semibold mb-6 animate-slide-up">
             <Globe className="w-4 h-4" />
-            Global Tech Competition for Young Innovators
+            Global Youth Tech Freestyle Innovation Challenge
           </div>
 
           {/* Main heading */}
@@ -82,9 +83,12 @@ const Hero = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Empowering kids aged 6-16 to innovate for the Sustainable Development Goals. 
-            Build projects that change the world!
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            Ages 8–18 • One Winner • Fully-Funded Trip to the USA
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.25s" }}>
+            Create ANY technology project — software, hardware, robotics, AI, or mixed — 
+            that solves a problem related to the UN Sustainable Development Goals.
           </p>
 
           {/* CTA Buttons */}
@@ -103,7 +107,7 @@ const Hero = () => {
           {/* Countdown Timer */}
           <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
             <p className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-wider">
-              Registration Closes In
+              Main Event - September 2025
             </p>
             <div className="flex items-center justify-center gap-3 md:gap-4">
               {countdownItems.map((item, index) => (
