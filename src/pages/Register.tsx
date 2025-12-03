@@ -30,7 +30,7 @@ const teamInfoSchema = z.object({
 
 const memberSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
-  age: z.number().min(6, "Minimum age is 6").max(16, "Maximum age is 16"),
+  age: z.number().min(8, "Minimum age is 8").max(18, "Maximum age is 18"),
   role: z.string().trim().min(2, "Please specify a role"),
 });
 
@@ -106,8 +106,8 @@ const Register = () => {
       if (step === 1) {
         teamInfoSchema.parse(teamInfo);
       } else if (step === 2) {
-        if (members.length < 2) {
-          setErrors({ members: "Team must have at least 2 members" });
+        if (members.length > 3) {
+          setErrors({ members: "Team can have maximum 3 members" });
           return false;
         }
         members.forEach((member, index) => {
@@ -141,8 +141,8 @@ const Register = () => {
   };
 
   const addMember = () => {
-    if (members.length < 5) {
-      setMembers([...members, { name: "", age: 10, role: "" }]);
+    if (members.length < 3) {
+      setMembers([...members, { name: "", age: 12, role: "" }]);
     }
   };
 
@@ -186,8 +186,8 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>Register Your Team | Teens World Cup</title>
-        <meta name="description" content="Register your team for Teens World Cup - the global tech competition for young innovators aged 6-16." />
+        <title>Register Your Team | Teens World Cup 2025</title>
+        <meta name="description" content="Register for Teens World Cup 2025 - the freestyle global innovation challenge for ages 8-18. Win a fully-funded trip to USA!" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -326,7 +326,7 @@ const Register = () => {
                   <div className="space-y-5 animate-slide-up">
                     <div className="flex items-center justify-between mb-6">
                       <h2 className="text-xl font-bold text-foreground">Team Members</h2>
-                      <span className="text-sm text-muted-foreground">2-5 members required</span>
+                      <span className="text-sm text-muted-foreground">1-3 members allowed</span>
                     </div>
                     
                     {errors.members && <p className="text-destructive text-sm mb-4">{errors.members}</p>}
@@ -364,11 +364,11 @@ const Register = () => {
                             />
                           </div>
                           <div>
-                            <label className="block text-sm font-semibold text-foreground mb-2">Age *</label>
+                            <label className="block text-sm font-semibold text-foreground mb-2">Age (8-18) *</label>
                             <input
                               type="number"
-                              min={6}
-                              max={16}
+                              min={8}
+                              max={18}
                               value={member.age}
                               onChange={(e) => updateMember(index, "age", parseInt(e.target.value) || 6)}
                               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
@@ -388,7 +388,7 @@ const Register = () => {
                       </div>
                     ))}
 
-                    {members.length < 5 && (
+                    {members.length < 3 && (
                       <button
                         onClick={addMember}
                         className="w-full py-3 border-2 border-dashed border-border rounded-2xl text-muted-foreground hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2"

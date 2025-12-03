@@ -9,32 +9,42 @@ const faqs = [
   {
     question: "Who can participate in Teens World Cup?",
     answer:
-      "The competition is open to kids and young people aged 6 to 16 years old from anywhere in the world. Teams can have 2-5 members, and each team must have at least one adult mentor or guardian.",
+      "The competition is open to youth aged 8 to 18 years old from anywhere in the world. You can participate as an individual or in teams of up to 3 members. Any school or academy can participate, and it's open internationally.",
   },
   {
     question: "What kind of projects can we submit?",
     answer:
-      "Projects should address one or more of the United Nations Sustainable Development Goals (SDGs). They can be apps, websites, hardware projects, or any tech-based solution that solves a real-world problem.",
+      "Participants may develop ANY project related to the UN Sustainable Development Goals (SDGs) with business potential. This includes robotics, IoT, AI, software, websites, hardware, or any creative tech prototype. There are no categories or restrictions — it's a pure freestyle competition!",
   },
   {
-    question: "Is there a registration fee?",
+    question: "What are the submission requirements?",
     answer:
-      "No! Teens World Cup is completely free to participate. We believe every young innovator should have the opportunity to showcase their talents regardless of financial background.",
-  },
-  {
-    question: "What support do participants receive?",
-    answer:
-      "All registered teams are paired with experienced mentors who guide them through the project development process. We also provide online workshops, resources, and a supportive community forum.",
+      "You need to submit: 1) Project Summary Document, 2) Working Prototype/Demo, 3) Video Demonstration (2-5 minutes), and 4) Pitch Deck (8-10 slides).",
   },
   {
     question: "How are projects judged?",
     answer:
-      "Projects are evaluated on innovation, impact on SDGs, technical execution, presentation quality, and teamwork. Judges include tech professionals, educators, and sustainability experts.",
+      "Projects are evaluated on: Innovation (25%), SDG Impact (25%), Technical Execution (25%), Business Potential (15%), and Presentation (10%).",
   },
   {
-    question: "What languages are supported?",
+    question: "What is the timeline for 2025?",
     answer:
-      "The competition currently supports English and Arabic. All materials, mentorship sessions, and submission forms are available in both languages.",
+      "February: Official Announcement. February → May: Early Registration. June → July: Late Registration. September: Main Competition Event.",
+  },
+  {
+    question: "What happens on the event day?",
+    answer:
+      "Morning: Registration, opening ceremony, project setup. Midday: Project evaluations. Afternoon: Finalist pitches. Evening: Winner announcement and awards ceremony.",
+  },
+  {
+    question: "What is the grand prize?",
+    answer:
+      "One fully-funded trip to the United States to attend an international technology and innovation conference. Only ONE winner is selected — the project with the highest innovation, impact, and startup potential.",
+  },
+  {
+    question: "Is there a registration fee?",
+    answer:
+      "Registration details will be announced during the official announcement in February 2025. Stay tuned for more information!",
   },
 ];
 

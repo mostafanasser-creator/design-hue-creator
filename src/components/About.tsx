@@ -1,30 +1,37 @@
-import { Target, Users, Lightbulb, Globe } from "lucide-react";
+import { Target, Users, Lightbulb, Globe, Cpu, Bot, Code, Wrench } from "lucide-react";
 
 const features = [
   {
     icon: Target,
     title: "SDG Focused",
-    description: "Projects addressing United Nations Sustainable Development Goals",
+    description: "Projects addressing United Nations Sustainable Development Goals with business potential",
     color: "twc-orange",
   },
   {
     icon: Users,
-    title: "Ages 6-16",
-    description: "Open to young innovators from around the world",
+    title: "Ages 8-18",
+    description: "Individuals or teams (up to 3 members) from any school or academy worldwide",
     color: "twc-green",
   },
   {
     icon: Lightbulb,
-    title: "Tech Innovation",
-    description: "Cutting-edge solutions using technology and creativity",
+    title: "Freestyle Innovation",
+    description: "No categories, no age divisions, no restrictions — pure innovation freestyle",
     color: "twc-blue",
   },
   {
     icon: Globe,
-    title: "Global Impact",
-    description: "Building solutions that can change communities worldwide",
+    title: "Open Internationally",
+    description: "Participants from any country can join and compete globally",
     color: "twc-yellow",
   },
+];
+
+const projectTypes = [
+  { icon: Bot, label: "Robotics" },
+  { icon: Cpu, label: "IoT" },
+  { icon: Code, label: "AI & Software" },
+  { icon: Wrench, label: "Hardware" },
 ];
 
 const About = () => {
@@ -39,14 +46,14 @@ const About = () => {
             What is <span className="text-gradient-hero">Teens World Cup</span>?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Teens World Cup is an international tech competition that empowers young minds 
-            to create innovative solutions for real-world challenges aligned with the 
-            UN Sustainable Development Goals.
+            Teens World Cup is a freestyle global innovation challenge where youth (8–18 years) 
+            create ANY technology project that solves a problem related to the United Nations 
+            Sustainable Development Goals (SDGs).
           </p>
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -85,13 +92,46 @@ const About = () => {
           })}
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {/* What You Can Build */}
+        <div className="bg-card rounded-3xl p-8 shadow-card mb-16">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-6">
+            What Can Participants Build?
+          </h3>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Participants may develop any project related to SDGs with business potential. 
+            This includes robotics, IoT, AI, software, websites, or any creative tech prototype.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {projectTypes.map((type, index) => {
+              const Icon = type.icon;
+              return (
+                <div
+                  key={type.label}
+                  className={`flex items-center gap-2 px-4 py-3 rounded-xl font-semibold ${
+                    index === 0
+                      ? "bg-twc-orange-light text-twc-orange"
+                      : index === 1
+                      ? "bg-twc-green-light text-twc-green"
+                      : index === 2
+                      ? "bg-twc-blue-light text-twc-blue"
+                      : "bg-twc-yellow-light text-twc-yellow"
+                  }`}
+                >
+                  <Icon className="w-5 h-5" />
+                  {type.label}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Who Can Join */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: "50+", label: "Countries" },
-            { value: "1000+", label: "Participants" },
-            { value: "200+", label: "Projects" },
-            { value: "$50K", label: "In Prizes" },
+            { value: "8-18", label: "Age Range" },
+            { value: "1-3", label: "Team Members" },
+            { value: "Any", label: "School/Academy" },
+            { value: "Global", label: "International" },
           ].map((stat, index) => (
             <div
               key={stat.label}

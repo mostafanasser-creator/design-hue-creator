@@ -1,31 +1,13 @@
-import { Plane, Award, Laptop, GraduationCap, Star } from "lucide-react";
+import { Plane, Award, Star, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-const prizes = [
-  {
-    icon: Plane,
-    title: "Trip to USA",
-    description: "Fully funded trip to Startup Grind Global Conference",
-    highlight: true,
-  },
-  {
-    icon: Laptop,
-    title: "Tech Equipment",
-    description: "Latest laptops and gadgets for winning teams",
-    highlight: false,
-  },
-  {
-    icon: GraduationCap,
-    title: "Scholarships",
-    description: "Educational scholarships and mentorship programs",
-    highlight: false,
-  },
-  {
-    icon: Award,
-    title: "Certificates",
-    description: "International recognition certificates for all participants",
-    highlight: false,
-  },
+const benefits = [
+  "Develop real-world problem-solving skills",
+  "Build strong engineering and entrepreneurship foundations",
+  "Gain exposure to technology professionals",
+  "Certificate for all participants",
+  "Chance to represent their country globally",
 ];
 
 const Prizes = () => {
@@ -38,14 +20,14 @@ const Prizes = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-2 bg-twc-yellow-light text-twc-yellow rounded-full text-sm font-bold mb-4">
-            Amazing Rewards
+            Grand Prize
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-foreground mb-6">
-            Win <span className="text-gradient-warm">Incredible Prizes</span>
+            Win an <span className="text-gradient-warm">Incredible Prize</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Top teams will receive amazing prizes including a fully funded trip to 
-            the Startup Grind Global Conference in Silicon Valley, USA!
+            At the end of the event, only ONE winner is selected — the project with the 
+            highest innovation, impact, and startup potential!
           </p>
         </div>
 
@@ -61,54 +43,70 @@ const Prizes = () => {
               <Plane className="w-10 h-10 text-primary-foreground" />
             </div>
             <h3 className="text-2xl md:text-4xl font-black text-primary-foreground mb-4">
-              🏆 Grand Prize
+              🏆 Fully-Funded Trip to USA
             </h3>
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-6">
-              Fully Funded Trip to Startup Grind Global Conference
+              Attend an International Technology & Innovation Conference
             </p>
             <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8">
-              The winning team will travel to Silicon Valley, USA, to attend the world's 
-              largest conference for startups, meet industry leaders, and showcase their project!
+              The winner will receive a fully-funded trip to the United States to attend 
+              a major technology conference, meet industry leaders, and showcase their project!
             </p>
-            <Button variant="secondary" size="xl">
-              Learn More
-            </Button>
+            <Link to="/register">
+              <Button variant="secondary" size="xl">
+                Register Now
+              </Button>
+            </Link>
           </div>
         </div>
 
-        {/* Other Prizes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {prizes.slice(1).map((prize, index) => {
-            const Icon = prize.icon;
-            return (
+        {/* Benefits Section */}
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            Benefits for All Participants
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {benefits.map((benefit, index) => (
               <div
-                key={prize.title}
-                className="bg-card rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 text-center"
+                key={index}
+                className="flex items-center gap-3 bg-card rounded-xl p-4 shadow-card"
               >
                 <div
-                  className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 ${
-                    index === 0
-                      ? "bg-twc-blue-light"
-                      : index === 1
+                  className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+                    index % 4 === 0
+                      ? "bg-twc-orange-light"
+                      : index % 4 === 1
                       ? "bg-twc-green-light"
-                      : "bg-twc-orange-light"
+                      : index % 4 === 2
+                      ? "bg-twc-blue-light"
+                      : "bg-twc-yellow-light"
                   }`}
                 >
-                  <Icon
-                    className={`w-7 h-7 ${
-                      index === 0
-                        ? "text-twc-blue"
-                        : index === 1
+                  <CheckCircle
+                    className={`w-5 h-5 ${
+                      index % 4 === 0
+                        ? "text-twc-orange"
+                        : index % 4 === 1
                         ? "text-twc-green"
-                        : "text-twc-orange"
+                        : index % 4 === 2
+                        ? "text-twc-blue"
+                        : "text-twc-yellow"
                     }`}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{prize.title}</h3>
-                <p className="text-muted-foreground">{prize.description}</p>
+                <span className="font-medium text-foreground">{benefit}</span>
               </div>
-            );
-          })}
+            ))}
+            {/* Certificate Card */}
+            <div className="flex items-center gap-3 bg-card rounded-xl p-4 shadow-card md:col-span-2">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-twc-orange-light">
+                <Award className="w-5 h-5 text-twc-orange" />
+              </div>
+              <span className="font-medium text-foreground">
+                International recognition certificate for all participants
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
