@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Home", href: "/", isRoute: true },
   { name: "Journey", href: "/journey", isRoute: true },
   { name: "News", href: "/news", isRoute: true },
-  { name: "About", href: "/#about", isRoute: false },
+  { name: "About", href: "/about", isRoute: true },
   { name: "Prizes", href: "/#prizes", isRoute: false },
   { name: "FAQ", href: "/#faq", isRoute: false },
 ];
